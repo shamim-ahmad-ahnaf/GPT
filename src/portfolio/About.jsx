@@ -44,6 +44,8 @@ function AboutPage() {
           <button className="px-8 py-3 text-white transition-all transform rounded-lg shadow-lg bg-gradient-to-r from-teal-500 to-pink-500 hover:from-teal-600 hover:to-pink-600 hover:opacity-80 hover:scale-110">
             Contact Me
           </button>
+    <h1>hello</h1>
+        
         </div>
 
       </div>
