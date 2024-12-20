@@ -1,56 +1,72 @@
-import React from 'react';
 
-function AboutPage() {
+import { Link } from "react-router-dom";
+import imgone from "../../public/img/my.png"
+
+
+
+function About() {
   return (
-    <div className="flex items-center justify-center min-h-screen text-center bg-gradient-to-r from-teal-500 via-purple-500 to-pink-500 dark:bg-gray-900">
-      <div className="w-full max-w-2xl p-8 transition-transform transform bg-white rounded-lg shadow-xl sm:p-10 md:p-12 lg:p-16 dark:bg-gray-800 hover:scale-105 hover:shadow-2xl hover:shadow-teal-500/50">
-        
-        {/* Heading */}
-        <h1 className="mb-6 text-4xl font-extrabold text-transparent transition-all sm:text-5xl md:text-6xl bg-clip-text bg-gradient-to-r from-teal-500 to-pink-500 hover:from-teal-600 hover:to-pink-600">
-          About Me
-        </h1>
+    <div className="relative flex items-center justify-center min-h-screen overflow-hidden bg-black dark:bg-black">
 
-        {/* Introduction */}
-        <p className="mb-8 text-lg text-gray-700 sm:text-xl dark:text-gray-300">
-          Hello! I'm a passionate front-end developer with a focus on building beautiful and functional websites using <span className="font-semibold text-teal-500">React</span> and <span className="font-semibold text-purple-500">Tailwind CSS</span>. I strive to create user-friendly, responsive, and performant web applications.
-        </p>
+      <div className="absolute w-full h-full opacity-30 animate-color-change"></div>
+      <div className="absolute inset-0 overflow-hidden ">
+        <div className="absolute w-[300%] h-[300%] bg-gradient-to-r from-green-500 via-lime-400 to-green-800 opacity-20 animate-slow-pan"></div>
+        <div className="absolute w-[200%] h-[200%] bg-gradient-to-t from-green-700 via-black to-lime-600 opacity-30 animate-slow-pan-reverse"></div>
 
-        {/* Skills Section */}
-        <div className="mb-8 space-y-4">
-          <h2 className="text-2xl font-semibold text-gray-800 sm:text-3xl dark:text-gray-100">Skills</h2>
-          <ul className="space-y-2 text-lg text-left text-gray-700 list-disc sm:text-xl dark:text-gray-300">
-            <li className="transition-colors hover:text-teal-500">React.js & Next.js</li>
-            <li className="transition-colors hover:text-teal-500">Tailwind CSS & Bootstrap</li>
-            <li className="transition-colors hover:text-teal-500">JavaScript (ES6+), HTML5, CSS3</li>
-            <li className="transition-colors hover:text-teal-500">Git, GitHub, Version Control</li>
-            <li className="transition-colors hover:text-teal-500">API Integration (REST, GraphQL)</li>
-          </ul>
-        </div>
+        {Array.from({ length: 20 }).map((_, i) => (
+          <div
+            key={i}
+            className={`absolute w-5 h-5 bg-gradient-to-br from-green-400 to-lime-500 rounded-full blur-lg opacity-60 animate-float`}
+            style={{
+              top: `${Math.random() * 100}%`,
+              left: `${Math.random() * 100}%`,
+              animationDelay: `${Math.random() * 5}s`,
+            }}
+          ></div>
+        ))}
 
-        {/* Experience Section */}
-        <div className="mb-8 space-y-4">
-          <h2 className="text-2xl font-semibold text-gray-800 sm:text-3xl dark:text-gray-100">Experience</h2>
-          <p className="text-lg text-gray-700 sm:text-xl dark:text-gray-300">
-            I have worked with several projects where I utilized React.js to build dynamic, fast, and scalable applications. I also have experience working with responsive designs using Tailwind CSS, ensuring optimal user experience across devices.
+        <div className="absolute border-2 border-green-500 rounded-full w-80 h-80 opacity-20 blur-2xl animate-rotate-slow"></div>
+        <div className="absolute border-2 rounded-full w-96 h-96 border-lime-500 opacity-10 blur-3xl animate-rotate-slower"></div>
+      </div>
+
+
+      <div className="relative z-10 max-w-xs p-6 text-center transition duration-500 transform shadow-lg shadow-green-lg sm:p-10 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-700 rounded-3xl hover:scale-105 sm:max-w-md lg:max-w-lg sm:px-8 sm:py-3 sm:mt-6 sm:text-lg hover:shadow-lime-500/50 ">
+
+        <div className="flex flex-col items-center">
+          <div className="relative">
+
+            <img
+              src={imgone}
+              alt="Profile"
+              className="w-32 h-32 transition-all duration-500 border-4 border-green-400 rounded-full shadow-lg sm:w-40 sm:h-40 hover:shadow-lime-500/50"
+            />
+
+            <div className="absolute top-0 left-0 w-full h-full border-4 rounded-full border-lime-500 animate-pulse"></div>
+          </div>
+          <h1 className="mt-4 text-3xl font-extrabold tracking-wide sm:mt-6 sm:text-5xl text-lime-400 animate-fade-in">
+            Shamim Ahmad
+          </h1>
+          <p className="mt-2 text-sm text-gray-300 sm:text-lg">
+            Creative <span className="text-green-400">Web Developer</span> &{" "}
+            <span className="text-lime-400">Designer</span>
           </p>
         </div>
 
-        {/* Contact Section */}
-        <div className="mt-8">
-          <h2 className="mb-4 text-2xl font-semibold text-gray-800 sm:text-3xl dark:text-gray-100">Let's Connect</h2>
-          <p className="mb-4 text-lg text-gray-700 sm:text-xl dark:text-gray-300">
-            Feel free to reach out if you're looking for a front-end developer for your next project or if you just want to connect and chat about technology!
+        <div className="mt-6 text-center sm:mt-8">
+          <p className="text-sm text-gray-400 sm:text-lg animate-fade-in-delayed">
+            Crafting visually stunning digital experiences.
           </p>
-          <button className="px-8 py-3 text-white transition-all transform rounded-lg shadow-lg bg-gradient-to-r from-teal-500 to-pink-500 hover:from-teal-600 hover:to-pink-600 hover:opacity-80 hover:scale-110">
-            Contact Me
-          </button>
-    <h1>hello</h1>
-        
+          <Link
+            to="/projects"
+            className="inline-block px-6 py-2 mt-4 text-sm font-bold text-black transition-all duration-300 transform rounded-full shadow-lg sm:px-8 sm:py-3 sm:mt-6 sm:text-lg bg-gradient-to-r from-green-400 to-lime-500 hover:shadow-lime-500/50 hover:scale-110"
+          >
+            Explore My Work
+          </Link>
         </div>
-
       </div>
     </div>
+
   );
 }
 
-export default AboutPage;
+export default About;
