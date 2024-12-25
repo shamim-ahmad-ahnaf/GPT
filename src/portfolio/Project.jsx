@@ -11,8 +11,8 @@ function Projects() {
     {
       title: "Portfolio Website",
       description:"A sleek portfolio showcasing my skills and projects. Built using React and Tailwind CSS.",
-      link: "https://github.com/shamim-ahmad-ahnaf/Portfolio",
-      github: "https://github.com/yourusername/portfolio",
+      link: "https://shamim-ahmad-ahnaf.github.io/Portfolio/",
+      github: "https://github.com/shamim-ahmad-ahnaf/Portfolio",
       image: "/img/port.jpg",
 
     },

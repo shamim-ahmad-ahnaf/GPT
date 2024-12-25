@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  darkMode: 'selector',
+  darkMode: 'class', 
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
@@ -16,6 +16,8 @@ export default {
         'rotate-slower': 'rotate-slower 30s linear infinite',
         'fade-in': 'fade-in 2s ease-out',
         'fade-in-delayed': 'fade-in 3s ease-out',
+        'spin-slow': 'spin-slow 10s linear infinite',
+        'fade-in-up': 'fade-in-up 0.7s ease-in-out',
       },
       keyframes: {
         'slow-pan': {
@@ -49,6 +51,18 @@ export default {
           '75%': { background: 'linear-gradient(to right, #0000FF, #8A2BE2)' },
           '100%': { background: 'linear-gradient(to right, #8A2BE2, #00FF00)' },
         },
+        'spin-slow': {
+          '0%': { transform: 'rotate(0deg)' },
+          '100%': { transform: 'rotate(360deg)' },
+        },
+        'fade-in-up': {
+          '0%': { opacity: 0, transform: 'translateY(50px)' },
+          '100%': { opacity: 1, transform: 'translateY(0)' },
+        },
+      },
+      fontFamily: {
+        nunito: ["Nunito", "sans-serif"],
+        inter: ["Inter", "sans-serif"],
       },
     },
   },

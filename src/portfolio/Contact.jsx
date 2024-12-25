@@ -46,9 +46,9 @@ function Contact() {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen p-6 bg-gradient-to-r from-lime-400 via-blue-300 to-green-500 dark:bg-gray-900">
-      <div className="w-full max-w-3xl p-8 rounded-lg shadow-xl bg-opacity-20 backdrop-blur-lg md:p-12 dark:bg-gray-900">
-        <h1 className="mb-6 text-4xl font-extrabold text-center text-blue-600 ">Contact Me</h1>
+    <div className="flex items-center justify-center min-h-screen p-6 bg-gradient-to-r from-gray-800 to-black">
+      <div className="w-full max-w-3xl p-8 bg-gray-400 rounded-lg shadow-xl bg-opacity-20 backdrop-blur-lg md:p-12">
+        <h1 className="mb-6 text-4xl font-extrabold text-center text-lime-400 ">Contact Me</h1>
         <p className="mb-8 text-lg font-bold text-center text-green-600 ">Feel free to reach out to us directly.</p>
 
         <form onSubmit={sendEmail} className="space-y-6">
@@ -91,8 +91,8 @@ function Contact() {
 
         <div className="mt-8 space-y-4">
           <div className="flex items-center space-x-4">
-            <FaMapMarkerAlt className="text-2xl text-orange-600" />
-            <span className="text-lg text-orange-600 ">Gazipur, Dhaka, Bangladesh</span>
+            <FaMapMarkerAlt className="text-2xl text-red-600" />
+            <span className="text-lg text-lime-400 ">Gazipur, Dhaka, Bangladesh</span>
           </div>
         </div>
 
@@ -106,7 +106,7 @@ function Contact() {
             <FaWhatsapp />
           </a>
           <a
-            href="https://linkedin.com"
+            href="www.linkedin.com/in/shamim-ahmad-772484331"
             target="_blank"
             rel="noreferrer"
             className="text-3xl text-blue-600 transition-all hover:text-blue-400"
@@ -114,7 +114,7 @@ function Contact() {
             <FaLinkedin />
           </a>
           <a
-            href="https://github.com"
+            href="https://github.com/shamim-ahmad-ahnaf"
             target="_blank"
             rel="noreferrer"
             className="text-3xl text-gray-500 transition-all hover:text-gray-300"
@@ -122,7 +122,8 @@ function Contact() {
             <FaGithub />
           </a>
           <a
-            href="https://facebook.com"
+            href="https://www.facebook.com/profile.php?id=100092273649975&mibextid=ZbWKwL
+"
             target="_blank"
             rel="noreferrer"
             className="text-3xl text-blue-600 transition-all hover:text-blue-400"
