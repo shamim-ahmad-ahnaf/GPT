@@ -4,7 +4,8 @@ import About from './portfolio/About';
 import Skills from './portfolio/Skills';
 import Projects from "./portfolio/Project";
 import Contact from "./portfolio/Contact";
-import Navbar from './portfolio/Navbar';
+import Footer from './portfolio/Footer';
+
 
 function App() {
   return (
