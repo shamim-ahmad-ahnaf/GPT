@@ -1,6 +1,6 @@
 
 import { Link } from "react-router-dom";
-import imgone from "../../public/img/my.png"
+import imgone from "../../public/img/shamim.png"
 
 
 
@@ -39,12 +39,12 @@ function About() {
               src={imgone}
               alt="Profile"
               className="w-32 h-32 transition-all duration-500 border-4 border-green-400 rounded-full shadow-lg sm:w-40 sm:h-40 hover:shadow-lime-500/50"
-            />
+            /> 
 
             <div className="absolute top-0 left-0 w-full h-full border-4 rounded-full border-lime-500 animate-pulse"></div>
           </div>
           <h1 className="mt-4 text-3xl font-extrabold tracking-wide sm:mt-6 sm:text-5xl text-lime-400 animate-fade-in">
-            Shamim Ahmad
+            SHAMIM AHMAD
           </h1>
           <p className="mt-2 text-sm text-gray-300 sm:text-lg">
             Creative <span className="text-green-400">Web Developer</span> &{" "}

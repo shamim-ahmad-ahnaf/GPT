@@ -9,8 +9,8 @@ import {
 
 function Navbar() {
   return (
-    <div className="fixed bottom-0 z-50 flex flex-row items-center w-full py-2 shadow-md justify-evenly md:flex-col md:w-auto md:py-0 md:top-1/2 md:right-0 md:-translate-y-1/2 md:space-y-8 md:bg-transparent md:shadow-none">
-      {[
+    <div className="fixed right-0 z-50 flex flex-col items-center w-auto py-0 space-y-8 -translate-y-1/2 bg-transparent shadow-none top-1/2">
+      {[  
         { to: "/", icon: <FaHome />, label: "Home" },
         { to: "/skills", icon: <FaUserAlt />, label: "Skills" },
         { to: "/projects", icon: <FaProjectDiagram />, label: "Projects" },
