@@ -72,32 +72,32 @@ export default function Footer() {
 
 
                 <div className="flex flex-col items-center pt-10 mt-8 border-t border-gray-700 lg:flex-row lg:justify-between lg:items-center">
-    {/* Copyright */}
-    <p className="mb-4 text-sm text-gray-400 lg:mb-0">
-        © {new Date().getFullYear()} <span className="font-bold text-lime-400">Shamim Ahmad</span>. All rights reserved.
-    </p>
+                    {/* Copyright */}
+                    <p className="mb-4 text-sm text-gray-400 lg:mb-0">
+                        © {new Date().getFullYear()} <span className="font-bold text-lime-400">Shamim Ahmad</span>. All rights reserved.
+                    </p>
 
-    {/* Social Links */}
-    <div className="flex justify-center space-x-6 text-xl text-gray-400">
-        {[
-            { href: "https://facebook.com", icon: <FaFacebookF />, label: "Facebook" },
-            { href: "https://twitter.com", icon: <FaTwitter />, label: "Twitter" },
-            { href: "https://instagram.com", icon: <FaInstagram />, label: "Instagram" },
-            { href: "https://github.com", icon: <FaGithub />, label: "GitHub" },
-        ].map((social) => (
-            <a
-                key={social.label}
-                href={social.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="transition-transform transform hover:text-lime-400 hover:scale-110"
-                aria-label={social.label}
-            >
-                {social.icon}
-            </a>
-        ))}
-    </div>
-</div>
+                    {/* Social Links */}
+                    <div className="flex justify-center space-x-6 text-xl text-gray-400">
+                        {[
+                            { href: "https://facebook.com", icon: <FaFacebookF />, label: "Facebook" },
+                            { href: "https://twitter.com", icon: <FaTwitter />, label: "Twitter" },
+                            { href: "https://instagram.com", icon: <FaInstagram />, label: "Instagram" },
+                            { href: "https://github.com", icon: <FaGithub />, label: "GitHub" },
+                        ].map((social) => (
+                            <a
+                                key={social.label}
+                                href={social.href}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="transition-transform transform hover:text-lime-400 hover:scale-110"
+                                aria-label={social.label}
+                            >
+                                {social.icon}
+                            </a>
+                        ))}
+                    </div>
+                </div>
 
             </div>
         </footer>

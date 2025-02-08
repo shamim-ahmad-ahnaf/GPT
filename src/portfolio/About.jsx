@@ -1,6 +1,6 @@
 
 import { Link } from "react-router-dom";
-import imgone from "../../public/img/shamim.png"
+import imgone from "../../public/shamim.png"
 
 
 
