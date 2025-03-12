@@ -2,17 +2,12 @@ import React from "react";
 
 function Projects() {
 
-  const img = "/img/port.jpg";
- const RESTAN = "/public/img/RESTAN.png"
-
-
-  
   const projectData = [
     {
       title: "Portfolio Website",
-      description:"A sleek portfolio showcasing my skills and projects. Built using React and Tailwind CSS.",
-      link: "https://github.com/shamim-ahmad-ahnaf/Portfolio",
-      github: "https://github.com/yourusername/portfolio",
+      description:"This is my personal portfolio website. It showcases my projects and skills.",
+      link: "https://personal-portfolio-three-omega-89.vercel.app/",
+      github: "https://github.com/shamim-ahmad-ahnaf/Personal-portfolio",
       image: "/img/port.jpg",
 
     },

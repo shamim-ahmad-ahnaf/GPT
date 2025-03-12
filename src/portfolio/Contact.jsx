@@ -1,13 +1,8 @@
 import React, { useState } from "react";
+import Swal from "sweetalert2";
 import {
-  FaEnvelope,
-  FaMapMarkerAlt,
-  FaLinkedin,
-  FaGithub,
-  FaFacebook,
-  FaWhatsapp,
+  FaEnvelope,FaMapMarkerAlt,FaLinkedin,FaGithub,FaFacebook,FaWhatsapp,
 } from "react-icons/fa";
-import emailjs from "emailjs-com";
 
 function Contact() {
   const [formData, setFormData] = useState({
@@ -16,42 +11,72 @@ function Contact() {
     message: "",
   });
 
+  const [loading, setLoading] = useState(false); 
+
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const sendEmail = (e) => {
-    e.preventDefault();
+  const onSubmit = async (event) => {
+    event.preventDefault();
+    setLoading(true); 
 
-    emailjs
-      .send(
-        "your_service_id",
-        "your_template_id",
-        {
-          from_name: formData.name,
-          from_email: formData.email,
-          message: formData.message,
+    const formDataObj = new FormData(event.target);
+    formDataObj.append("access_key", "38df47ed-4efc-4a52-932b-9b24ea8c48a0");
+
+    const json = JSON.stringify(Object.fromEntries(formDataObj));
+
+    try {
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
         },
-        "your_user_id"
-      )
-      .then(
-        () => {
-          alert("Message sent successfully!");
-          setFormData({ name: "", email: "", message: "" });
-        },
-        () => {
-          alert("Failed to send the message. Please try again.");
-        }
-      );
+        body: json,
+      });
+
+      const result = await res.json();
+
+      if (result.success) {
+        Swal.fire({
+          title: "Message Sent!",
+          text: "Your message has been successfully sent.",
+          icon: "success",
+          confirmButtonColor: "#3085d6",
+        });
+        setFormData({ name: "", email: "", message: "" });
+      } else {
+        Swal.fire({
+          title: "Error!",
+          text: "Failed to send message. Please try again.",
+          icon: "error",
+          confirmButtonColor: "#d33",
+        });
+      }
+    } catch (error) {
+      Swal.fire({
+        title: "Oops!",
+        text: "Something went wrong. Please try again later.",
+        icon: "error",
+        confirmButtonColor: "#d33",
+      });
+    } finally {
+      setLoading(false); 
+    }
   };
 
   return (
     <div className="flex items-center justify-center min-h-screen p-6 bg-gradient-to-r from-gray-800 to-black">
       <div className="w-full max-w-3xl p-8 bg-gray-400 rounded-lg shadow-xl bg-opacity-20 backdrop-blur-lg md:p-12">
-        <h1 className="mb-6 text-4xl font-extrabold text-center text-lime-400 ">Contact Me</h1>
-        <p className="mb-8 text-lg font-bold text-center text-green-600 ">Feel free to reach out to us directly.</p>
+        <h1 className="mb-6 text-4xl font-extrabold text-center text-lime-400">
+          Contact Me
+        </h1>
+        <p className="mb-8 text-lg font-bold text-center text-green-600">
+          Feel free to reach out to us directly.
+        </p>
 
-        <form onSubmit={sendEmail} className="space-y-6">
+        <form onSubmit={onSubmit} className="space-y-6">
           <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
             <input
               type="text"
@@ -83,16 +108,19 @@ function Contact() {
           ></textarea>
           <button
             type="submit"
+            disabled={loading}
             className="w-full px-6 py-3 font-bold tracking-wide text-white uppercase transition-all transform rounded-md bg-gradient-to-r from-green-600 via-lime-500 to-yellow-500 hover:opacity-90 hover:scale-105"
           >
-            Send Message
+            {loading ? "Sending..." : "Send Message"}
           </button>
         </form>
 
         <div className="mt-8 space-y-4">
           <div className="flex items-center space-x-4">
             <FaMapMarkerAlt className="text-2xl text-red-600" />
-            <span className="text-lg text-lime-400 ">Gazipur, Dhaka, Bangladesh</span>
+            <span className="text-lg text-lime-400">
+              Gazipur, Dhaka, Bangladesh
+            </span>
           </div>
         </div>
 
@@ -122,8 +150,7 @@ function Contact() {
             <FaGithub />
           </a>
           <a
-            href="https://www.facebook.com/profile.php?id=100092273649975&mibextid=ZbWKwL
-"
+            href="https://www.facebook.com/profile.php?id=100092273649975&mibextid=ZbWKwL"
             target="_blank"
             rel="noreferrer"
             className="text-3xl text-blue-600 transition-all hover:text-blue-400"
@@ -139,7 +166,6 @@ function Contact() {
         </div>
       </div>
     </div>
-
   );
 }
 
