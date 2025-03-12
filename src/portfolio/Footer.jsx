@@ -15,39 +15,35 @@ export default function Footer() {
                                 <li key={item}>
                                     <Link
                                         to={`/${item.toLowerCase()}`}
-                                        className="text-gray-300 transition-colors hover:text-lime-400"
-                                    >
+                                        className="text-gray-300 transition-colors hover:text-lime-400">
                                         {item}
                                     </Link>
                                 </li>
                             ))}
                         </ul>
                     </div>
-
                     {/* Contact */}
                     <div className="flex flex-col items-center sm:items-start">
                         <h3 className="mb-4 text-2xl font-bold text-lime-400">Contact</h3>
                         <ul className="space-y-2">
                             <li>
-                                Email:{" "}
+                                Email:{""}
                                 <a
                                     href="mailto:shamimahmad14182266@gmail.com"
-                                    className="text-lime-400 hover:underline"
-                                >
+                                    className="text-lime-400 hover:underline">
                                     shamimahmad14182266@gmail.com
                                 </a>
                             </li>
                             <li>
-                                Phone:{" "}
+                                Phone:{""}
                                 <a
                                     href="tel:01604171812"
-                                    className="text-lime-400 hover:underline"
-                                >
+                                    className="text-lime-400 hover:underline">
                                     01604171812, 01748186766
                                 </a>
                             </li>
                             <li>
-                                Location:{" "}
+                                Location:{""}
                                 <span className="text-lime-400">Gazipur, Dhaka, Bangladesh</span>
                             </li>
                         </ul>
