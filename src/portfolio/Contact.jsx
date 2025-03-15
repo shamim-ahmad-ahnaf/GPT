@@ -1,17 +1,18 @@
 import React, { useState } from "react";
 import Swal from "sweetalert2";
 import {
-  FaEnvelope,FaMapMarkerAlt,FaLinkedin,FaGithub,FaFacebook,FaWhatsapp,
+  FaEnvelope, FaMapMarkerAlt, FaLinkedin, FaGithub, FaFacebook, FaWhatsapp,
 } from "react-icons/fa";
 
 function Contact() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
+    phone: "", // ফোন নাম্বার ফিল্ড যোগ করা হয়েছে
     message: "",
   });
 
-  const [loading, setLoading] = useState(false); 
+  const [loading, setLoading] = useState(false);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -19,7 +20,7 @@ function Contact() {
 
   const onSubmit = async (event) => {
     event.preventDefault();
-    setLoading(true); 
+    setLoading(true);
 
     const formDataObj = new FormData(event.target);
     formDataObj.append("access_key", "38df47ed-4efc-4a52-932b-9b24ea8c48a0");
@@ -45,7 +46,7 @@ function Contact() {
           icon: "success",
           confirmButtonColor: "#3085d6",
         });
-        setFormData({ name: "", email: "", message: "" });
+        setFormData({ name: "", email: "", phone: "", message: "" });
       } else {
         Swal.fire({
           title: "Error!",
@@ -62,7 +63,7 @@ function Contact() {
         confirmButtonColor: "#d33",
       });
     } finally {
-      setLoading(false); 
+      setLoading(false);
     }
   };
 
@@ -87,6 +88,16 @@ function Contact() {
               required
               className="w-full px-4 py-3 text-blue-900 bg-blue-100 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 dark:text-white dark:bg-gray-700"
             />
+             <input
+            type="number"
+            name="phone"
+            placeholder="Your Phone Number"
+            value={formData.phone}
+            onChange={handleChange}
+            required
+            className="w-full px-4 py-3 text-purple-900 bg-purple-100 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500 dark:text-white dark:bg-gray-700"
+          />
+          </div>
             <input
               type="email"
               name="email"
@@ -96,7 +107,7 @@ function Contact() {
               required
               className="w-full px-4 py-3 text-green-900 bg-green-100 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 dark:text-white dark:bg-gray-700"
             />
-          </div>
+         
           <textarea
             name="message"
             placeholder="Your Message"
@@ -114,56 +125,6 @@ function Contact() {
             {loading ? "Sending..." : "Send Message"}
           </button>
         </form>
-
-        <div className="mt-8 space-y-4">
-          <div className="flex items-center space-x-4">
-            <FaMapMarkerAlt className="text-2xl text-red-600" />
-            <span className="text-lg text-lime-400">
-              Gazipur, Dhaka, Bangladesh
-            </span>
-          </div>
-        </div>
-
-        <div className="flex justify-center mt-8 space-x-6">
-          <a
-            href="https://wa.me/+8801748186766"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-3xl text-green-600 transition-all hover:text-green-500"
-          >
-            <FaWhatsapp />
-          </a>
-          <a
-            href="www.linkedin.com/in/shamim-ahmad-772484331"
-            target="_blank"
-            rel="noreferrer"
-            className="text-3xl text-blue-600 transition-all hover:text-blue-400"
-          >
-            <FaLinkedin />
-          </a>
-          <a
-            href="https://github.com/shamim-ahmad-ahnaf"
-            target="_blank"
-            rel="noreferrer"
-            className="text-3xl text-gray-500 transition-all hover:text-gray-300"
-          >
-            <FaGithub />
-          </a>
-          <a
-            href="https://www.facebook.com/profile.php?id=100092273649975&mibextid=ZbWKwL"
-            target="_blank"
-            rel="noreferrer"
-            className="text-3xl text-blue-600 transition-all hover:text-blue-400"
-          >
-            <FaFacebook />
-          </a>
-          <a
-            href="mailto:shamimahmad14182266@gmail.com"
-            className="text-2xl text-blue-600 transition-all hover:text-blue-400"
-          >
-            <FaEnvelope />
-          </a>
-        </div>
       </div>
     </div>
   );
