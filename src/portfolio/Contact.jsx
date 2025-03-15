@@ -65,12 +65,14 @@ function Contact() {
             {loading ? "Sending..." : "Send Message"}
           </button>
         </form>
-        <div className="flex items-center justify-between mt-20 ">
-          <div className="flex items-center space-x-4 ">
+        <div className="flex flex-col items-center justify-between gap-4 mt-14 sm:flex-row">
+          <div className="flex items-center space-x-4">
             <FaMapMarkerAlt className="text-2xl text-red-600" />
-            <span className="text-lg text-lime-400">Gazipur, Dhaka, Bangladesh</span>
+            <span className="text-lg text-center text-lime-400 sm:text-left">
+              Gazipur, Dhaka, Bangladesh
+            </span>
           </div>
-          <div className="flex items-center space-x-6">
+          <div className="flex items-center mt-4 space-x-6 sm:space-x-4 sm:mt-0">
             <a href="https://wa.me/+8801748186766" target="_blank" rel="noopener noreferrer" className="text-3xl text-green-600 transition-all hover:text-green-500">
               <FaWhatsapp />
             </a>
@@ -88,6 +90,9 @@ function Contact() {
             </a>
           </div>
         </div>
+
+
+
       </div>
     </div>
   );
