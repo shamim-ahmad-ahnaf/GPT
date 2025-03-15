@@ -30,7 +30,7 @@ export default function Skills() {
 
   return (
     <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900">
-      <div className="w-[90%] max-w-[1000px] p-8 rounded-3xl shadow-2xl bg-gradient-to-br from-gray-800 to-gray-700 border border-lime-600 mt-5 mb-5">
+      <div className="w-[90%] max-w-[1000px] p-8 rounded-3xl shadow-2xl bg-gradient-to-br  border border-lime-600 mt-5 mb-5">
         <h1 className="mb-8 text-5xl font-extrabold text-center text-transparent sm:text-6xl bg-clip-text bg-gradient-to-r from-lime-400 to-green-500 animate-bounce">
           My Skills
         </h1>
@@ -39,7 +39,7 @@ export default function Skills() {
             <li
               key={index}
               onClick={() => openModal(skill)}
-              className="relative flex flex-col items-center p-8 text-lg font-medium text-white transition-transform transform shadow-2xl cursor-pointer rounded-3xl bg-gradient-to-r from-teal-600 to-green-600 hover:scale-125 hover:shadow-3xl hover:from-lime-500 hover:to-green-500"
+              className="relative flex flex-col items-center p-8 text-lg font-medium text-white transition-transform transform shadow-2xl cursor-pointer rounded-3xl bg-gradient-to-r from-teal-600 to-green-600 hover:scale-105 hover:shadow-3xl hover:from-lime-500 hover:to-green-500"
             >
               <div
                 className={`w-24 h-24 mb-6 flex items-center justify-center text-5xl font-bold rounded-full border-8 border-lime-400 shadow-inner bg-gray-900 ${skill.color}`}
@@ -57,16 +57,17 @@ export default function Skills() {
 
       {/* Modal Component */}
       {isModalOpen && selectedSkill && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
-          <div className="w-1/3 p-8 text-center bg-gradient-to-br from-gray-900 via-black to-gray-900 rounded-xl text-lime-500">
-            <h2 className="mb-4 text-3xl font-semibold">{selectedSkill.name}</h2>
-            <p className="mb-4 text-lg">{selectedSkill.details}</p>
-            <button onClick={closeModal} className="p-2 text-white bg-red-500 rounded-md hover:bg-red-600">
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 ">
+          <div className="w-[90%] max-w-md p-6 sm:p-8 text-center bg-gradient-to-br from-gray-900 via-black to-gray-900 rounded-xl text-lime-500 shadow-2xl">
+            <h2 className="mb-4 text-2xl font-semibold sm:text-3xl">{selectedSkill.name}</h2>
+            <p className="mb-4 text-base sm:text-lg">{selectedSkill.details}</p>
+            <button onClick={closeModal} className="px-4 py-2 text-white bg-red-500 rounded-md hover:bg-red-600">
               Close
             </button>
           </div>
         </div>
       )}
+
     </div>
   );
 }

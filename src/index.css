@@ -6,8 +6,8 @@
 @import "~@fortawesome/fontawesome-free/css/all.min.css";
 
 
-@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders:opsz,wght@10..72,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
 
 body {
-  font-family: "Big Shoulders", sans-serif;
+  font-family: "Oswald", sans-serif;
 }

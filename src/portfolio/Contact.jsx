@@ -67,7 +67,7 @@ function Contact() {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen p-6 bg-gradient-to-r from-gray-800 to-black">
+    <div className="flex items-center justify-center min-h-screen p-6 bg-black">
       <div className="w-full max-w-3xl p-8 bg-gray-400 rounded-lg shadow-xl bg-opacity-20 backdrop-blur-lg md:p-12">
         <h1 className="mb-6 text-4xl font-extrabold text-center text-lime-400">
           Contact Me

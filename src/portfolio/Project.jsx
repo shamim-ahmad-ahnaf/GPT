@@ -1,15 +1,15 @@
 import React from "react";
+import portfolio from "../../public/portfolio.png";
 
 function Projects() {
-
   const projectData = [
     {
       title: "Portfolio Website",
-      description:"This is my personal portfolio website. It showcases my projects and skills.",
+      description:
+        "This is my personal portfolio website. It showcases my projects and skills.",
       link: "https://personal-portfolio-three-omega-89.vercel.app/",
       github: "https://github.com/shamim-ahmad-ahnaf/Personal-portfolio",
-      image: "/img/port.jpg",
-
+      image: portfolio
     },
     {
       title: "E-commerce RESTAN",
@@ -17,7 +17,7 @@ function Projects() {
         "A functional e-commerce platform featuring product filters and cart management.",
       link: "/e-commerce",
       github: "https://github.com/yourusername/e-commerce",
-      image: "public/img/RESTAN.png",
+      image: "/img/RESTAN.png",
     },
     {
       title: "Task Manager",
@@ -30,9 +30,9 @@ function Projects() {
   ];
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gradient-to-r from-gray-800 to-black">
+    <div className="flex items-center justify-center min-h-screen bg-black">
       <div className="w-full px-6 py-16 max-w-7xl">
-        <h1 className="mb-10 text-4xl font-bold text-center text-lime-500 sm:text-5xl">
+        <h1 className="mb-6 text-5xl font-extrabold text-center text-lime-400 sm:text-6xl">
           My Projects
         </h1>
         <p className="max-w-2xl mx-auto mb-12 text-lg text-center text-gray-300">
@@ -42,12 +42,16 @@ function Projects() {
           {projectData.map((project, index) => (
             <div
               key={index}
-              className="relative overflow-hidden transition-transform bg-gray-900 border-2 rounded-lg shadow-md border-lime-400 hover:shadow-lg hover:scale-105"
+              className="relative overflow-hidden transition-transform bg-gray-900 border rounded-lg shadow-lg border-lime-500 hover:shadow-xl hover:scale-105"
             >
-              <div
-                className="h-48 bg-center bg-cover"
-                style={{ backgroundImage: `url(${project.image})` }}
-              ></div>
+              <div className="relative h-52">
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="object-cover w-full h-full"
+                />
+                <div className="absolute inset-0 bg-black bg-opacity-50"></div>
+              </div>
               <div className="p-6 text-white">
                 <h3 className="mb-3 text-2xl font-semibold text-lime-400">
                   {project.title}
@@ -56,13 +60,13 @@ function Projects() {
                 <div className="flex items-center justify-between">
                   <a
                     href={project.link}
-                    className="px-4 py-2 text-sm font-medium text-white border-2 rounded hover:bg-lime-700 border-lime-400 hover:text-black"
+                    className="px-4 py-2 text-sm font-medium text-white transition-all duration-300 rounded-md bg-lime-600 hover:bg-lime-500"
                   >
                     View Project
                   </a>
                   <a
                     href={project.github}
-                    className="px-4 py-2 text-sm font-medium border-2 rounded text-black-400 border-lime-400 hover:bg-lime-700 hover:text-black"
+                    className="px-4 py-2 text-sm font-medium text-black transition-all duration-300 bg-white rounded-md hover:bg-gray-200"
                   >
                     GitHub
                   </a>
